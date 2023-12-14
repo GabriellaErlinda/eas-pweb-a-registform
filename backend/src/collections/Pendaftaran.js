@@ -27,13 +27,13 @@ const Pendaftaran = {
       unique : true
     },
     {
-      name: 'Tempat Lahir',
-      label: 'Tempat Lahir',
+      name: 'Tempat_Lahir',
+      label: 'Tempat_Lahir',
       type: 'date',
       required: true,
     },
     {
-      name: 'title',
+      name: 'Asal-Sekolah',
       label: 'Asal Sekolah',
       type: 'text',
       required: true,
@@ -75,8 +75,8 @@ const Pendaftaran = {
       required: true,
     },
     {
-      name: 'Tanggal Pendaftaran',
-      label: 'Tanggal Pendaftaran',
+      name: 'Tanggal_Pendaftaran',
+      label: 'Tanggal_Pendaftaran',
       type: 'date',
       required: true,
     },
