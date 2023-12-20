@@ -1,9 +1,9 @@
 <template>
-  <div class="card text-center" style="display:flex;">
-    <h2 class="card-header">Check Your Registration Status</h2>
+  <div class="card text-success" style="display:flex;">
+    <h2 class="card-header text-center">Check Your Registration Status</h2>
     <form @submit.prevent="checkStatus" class="card-body">
       <div class="form-group">
-        <label for="email" class="form-label">Email address</label>
+        <label for="email" class="form-label"><strong>Email address</strong></label>
         <input type="email" id="email" v-model="email" required class="form-control form-control-sm" placeholder="Enter email" />
       </div>
       <br>
@@ -13,7 +13,7 @@
     </form>
 
     <div v-if="status !== null">
-      <h3 class="card-body" style="font-size: large;">Registration Status:</h3>
+      <h3 class="card-body text-center" style="font-size: large;">Registration Status:</h3>
       <p v-html="status"></p>
     </div>
     <br>
