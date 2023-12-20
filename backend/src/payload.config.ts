@@ -1,19 +1,21 @@
-import path from 'path'
+import path from 'path';
 
-import { payloadCloud } from '@payloadcms/plugin-cloud'
-import { mongooseAdapter } from '@payloadcms/db-mongodb'
-import { webpackBundler } from '@payloadcms/bundler-webpack'
-import { slateEditor } from '@payloadcms/richtext-slate'
-import { buildConfig } from 'payload/config'
+import { payloadCloud } from '@payloadcms/plugin-cloud';
+import { mongooseAdapter } from '@payloadcms/db-mongodb';
+import { webpackBundler } from '@payloadcms/bundler-webpack';
+import { slateEditor } from '@payloadcms/richtext-slate';
+import { buildConfig } from 'payload/config';
 
-import Users from './collections/Users'
-import Pendaftaran from './collections/Pendaftaran'
+import Users from './collections/Users';
+import Pendaftaran from './collections/Pendaftaran';
 
 export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
   },
+  cors: ['http://localhost:5173'],
+  csrf: ['http://localhost:5173'],
   editor: slateEditor({}),
   collections: [Users, Pendaftaran],
   typescript: {
@@ -26,4 +28,4 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
   }),
-})
+});

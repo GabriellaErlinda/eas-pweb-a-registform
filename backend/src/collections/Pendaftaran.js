@@ -4,7 +4,7 @@ import payload from 'payload';
 const Pendaftaran = {
   slug: 'Pendaftaran',
   admin: {
-    useAsTitle: 'name'
+    useAsTitle: 'name',
   },
   access: {
     read: () => true,
@@ -20,63 +20,49 @@ const Pendaftaran = {
       required: true,
     },
     {
-      name: "email",
-      type: "email",
-      label: "Email",
+      name: 'email',
+      type: 'email',
+      label: 'Email',
       required: true,
-      unique : true
+      unique: true,
     },
     {
-      name: 'Tempat_Lahir',
-      label: 'Tempat_Lahir',
+      name: 'Tanggal_Lahir',
+      label: 'Tanggal Lahir',
       type: 'date',
       required: true,
     },
     {
-      name: 'Asal-Sekolah',
+      name: 'Asal_Sekolah',
       label: 'Asal Sekolah',
       type: 'text',
       required: true,
     },
     {
       name: 'Gender',
-      type: 'radio',
+      type: 'select',
       options: [
         {
-            label: 'Laki-laki',
-            value: 'Laki-laki',
+          label: 'Laki-laki',
+          value: 'Laki-laki',
         },
         {
-            label: 'Perempuan',
-            value: 'Perempuan',
+          label: 'Perempuan',
+          value: 'Perempuan',
         },
       ],
       required: true,
     },
     {
-      name: 'status',
-      label: 'Status',
-      type: 'radio',
-      options: [
-        {
-            label: 'Waiting',
-            value: 'Waiting',
-        },
-        {
-            label: 'Rejected',
-            value: 'Rejected',
-        },
-        {
-          label: 'Accepted',
-          value: 'Accepted',
-        },
-      ],
-      defaultValue: 'Waiting',
+      name: "status",
+      type: "select",
+      options: ["Waiting", "Rejected", "Accepted"],
+      defaultValue: "Waiting",
       required: true,
     },
     {
       name: 'Tanggal_Pendaftaran',
-      label: 'Tanggal_Pendaftaran',
+      label: 'Tanggal Pendaftaran',
       type: 'date',
       required: true,
     },

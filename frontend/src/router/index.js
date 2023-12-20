@@ -1,14 +1,21 @@
-// src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/views/Home.vue';
-
-const routes = [
-  { path: '/home', component: Home },
-];
+import PendaftaranView from '../views/PendaftaranView.vue';
+import StatusView from '../views/StatusView.vue';
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'PendaftaranView',
+      component: PendaftaranView,
+    },
+    {
+      path: '/status',
+      name: 'StatusView',
+      component: StatusView,
+    },
+  ],
 });
 
 export default router;
